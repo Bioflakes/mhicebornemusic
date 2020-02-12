@@ -1,0 +1,200 @@
+def apply_bytes(passed_dict, selection):
+    counter = 0
+    dictionary = hex_dictionary.get(passed_dict)
+    bytelist = bytes_dictionary.get(selection)
+    for key, val in dictionary.items():
+        if counter == 6:
+            counter = 0
+        dictionary[key] = bytelist[counter]
+        counter += 1
+    print(f"selected {selection} with dictionary {passed_dict} from bytearray {dictionary}")
+    return dictionary
+
+
+mhxx_bytes = [b'\xee|?5^lx\xc0\xee|?5^lx@\x19\x04V\x0eV\x04\x01\xc1\xc9v\xbe\x1f*\xbc\x10A',
+            b'\xbaI\x0c\x02\xc8g\x00A', b'\xbaI\x0c\x02\xc8g\x00A',
+            b'y\xe9&1\xfes\x00\xc1y\xe9&1\xfes\x00A\x00\x00\x00\x00\x00\x88\xb3\xc0\xc9v\xbe\x1f*\xbc\x10A',
+            b'\x19\x04V\x0e\x16h\x00A', b'\x19\x04V\x0e\x16h\x00A']
+
+mhfu_bytes = [b'\xd9\xce\xf7S\xe3\x81\x99\xc0\xd9\xce\xf7S\xe3\x81\x99@b\x10X9`Z\x02\xc1\x89A`\xe5\x14p\x11A',
+            b'\x12\x83\xc0\xca\xc5R\x00A', b'\x12\x83\xc0\xca\xc5R\x00A',
+            b'\xb0rh\x91\xc9\x85\x00\xc1\xb0rh\x91\xc9\x85\x00A\x1b/\xdd$\x06:\xd0\xc0\x89A`\xe5\x14p\x11A',
+            b'\x7fj\xbct\x1fS\x00A', b'\x7fj\xbct\x1fS\x00A']
+
+mh3u_bytes = [b'\xe9&1\x08\xac0}\xc0\xe9&1\x08\xac0}@\xa6\x9b\xc4 9;\t\xc1\xcb\xa1E6\xb2\xb5\x16A',
+              b'\\\x8f\xc2\xf5\x92!\x04A', b'\\\x8f\xc2\xf5\x92!\x04A',
+              b'\xf0\xa7\xc6K+0\x04\xc1\xf0\xa7\xc6K+0\x04A/\xdd$\x061u\xe4\xc0\xcb\xa1E6\xb2\xb5\x16A',
+              b'Zd;\xdf\xec\x1d\x04A', b'Zd;\xdf\xec\x1d\x04A']
+
+swing_bytes = [b'F\xb6\xf3\xfd\xd4\xe7\x83\xc0F\xb6\xf3\xfd\xd4\xe7\x83@o\x12\x83\xc0V\x95\x14\xc1q=\n\xd7\xaas$A',
+               b'\x98n\x12\x03\x0bH\x14A', b'\x98n\x12\x03\x0bH\x14A',
+               b'sh\x91\xed\xfeQ\x14\xc1sh\x91\xed\xfeQ\x14A\x00\x00\x00\x00\x00\x88\xb3\xc0q=\n\xd7\xaas$A',
+               b'o\x12\x83\xc06G\x14A', b'o\x12\x83\xc06G\x14A']
+
+mhfu_hub_bytes = [b'm\xe7\xfb\xa9\xf1\xf2|\xc0m\xe7\xfb\xa9\xf1\xf2|@{\x14\xaeGt\xd0\x01\xc1\xaeG\xe1\xfa\x90\x89\x11A',
+                  b'\xee|?544\x01A', b'\xee|?544\x01A',
+                  b'\xe1z\x14\xae\xadB\x01\xc1\xe1z\x14\xae\xadB\x01A\x00\x00\x00\x00\x00\x88\xb3\xc0\xaeG\xe1\xfa\x90\x89\x11A',
+                  b'{\x14\xaeG44\x01A', b'{\x14\xaeG44\x01A']
+
+mh4u_hub_bytes = [b'\x9e\xef\xa7\xc6KR\x89\xc0\x9e\xef\xa7\xc6KR\x89@?5^z\x16\xb7"\xc1o\x12\x83\x00|\xd7"A',
+                  b'3333\xf3\x10\xaa@', b'3333\xf3\x10\xaa@',
+                  b'\x8d\x97n\x12\xc32\xb0\xc0\x8d\x97n\x12\xc32\xb0@\x00\x00\x00\x00\x00\x88\xb3\xc0o\x12\x83\x00|\xd7"A',
+                  b'?5^z\x06\x90"A', b'?5^z\x06\x90"A']
+
+mhp3_hub_bytes = [b'{\x14\xaeG\xe12\x83\xc0{\x14\xaeG\xe12\x83@\n\xd7\xa3p\xc1\x91\xf6\xc0\x93\x18\x04VU\xea\x03A',
+                  b'\xf4\xfd\xd4x\x83\x1c\xf1@', b'\xf4\xfd\xd4x\x83\x1c\xf1@',
+                  b'\x1dZd;\xe9B\xf1\xc0\x1dZd;\xe9B\xf1@+\x87\x16\xd9>*\xd9\xc0\x93\x18\x04VU\xea\x03A',
+                  b'?5^\xba1G\xf0@', b'?5^\xba1G\xf0@']
+
+mh4u_cathar_bytes = [b'\xaa\xf1\xd2Mb\x8c\x80\xc0\xaa\xf1\xd2Mb\x8c\x80@\xd5x\xe9&eC\xff\xc0b\x10X9\x05\x17\x0cA',
+                     b'\x0c\x02+\x87\x8c\xc9\xf8@', b'\x0c\x02+\x87\x8c\xc9\xf8@',
+                     b'\xf0\xa7\xc6K\xa5\xea\xf8\xc0\xf0\xa7\xc6K\xa5\xea\xf8@\xa4p=\n\xdf\xe2\xd9\xc0b\x10X9\x05\x17\x0cA',
+                     b'\xac\x1cZd\xad\xca\xf8@', b'\xac\x1cZd\xad\xca\xf8@']
+
+mhp3_yukumo_bytes = [b'\xe3\xa5\x9b\xc4 o\x81\xc0\xe3\xa5\x9b\xc4 o\x81@J\x0c\x02+\xab\xfd\xff\xc0m\xe7\xfb\xa9\xaa\x00\x0fA',
+                     b'D\x8bl\xe7\xcb\xe0\xfd@', b'D\x8bl\xe7\xcb\xe0\xfd@',
+                     b'\x8f\xc2\xf5(\xaa\x03\xfe\xc0\x8f\xc2\xf5(\xaa\x03\xfe@\xb2\x9d\xef\xa7V\x14\xd2\xc0m\xe7\xfb\xa9\xaa\x00\x0fA',
+                     b'\xdd$\x06\x81\x95x\xfb@', b'\xdd$\x06\x81\x95x\xfb@']
+
+mhf_kokoto_bytes = [b'33333P\x81\xc033333P\x81@\xc7K7\x89F<\x00\xc1d;\xdfOW\xe4\x12A',
+                    b'\xcf\xf7S\xe3\x17{\x05A', b'\xcf\xf7S\xe3\x17{\x05A',
+                    b'\x02+\x87\x16h\x8c\x05\xc1\x02+\x87\x16h\x8c\x05A\x00\x00\x00\x00\x00\x88\xb3\xc0d;\xdfOW\xe4\x12A',
+                    b'\x8d\x97n\x12\r@\xff@', b'\x8d\x97n\x12\r@\xff@']
+
+seliana_day = {
+    0x10C6: "",
+    0x1158: "",
+    0x1178: "",
+    0x11AC: "",
+    0x123E: "",
+    0x125E: ""
+}
+
+seliana_night = {
+    0xC414: "",
+    0xC4A6: "",
+    0xC4C6: "",
+    0xC4FA: "",
+    0xC58C: "",
+    0xC5AC: ""
+}
+
+gathering_hub_seliana = {
+    0xB92B: "",
+    0xB9BD: "",
+    0xB9DD: "",
+    0xBA11: "",
+    0xBAA3: "",
+    0xBAC3: ""
+}
+
+gathering_hub_astera = {
+    0xC4258: "",
+    0xC42EA: "",
+    0xC430A: "",
+    0xC433E: "",
+    0xC43D0: "",
+    0xC43F0: ""
+}
+
+gathering_hub_ann_event = {
+    0x64E8: "",
+    0x6510: "",
+    0x65F6: "",
+    0x6616: "",
+    0x664A: "",
+    0x66DC: "",
+    0x66FC: ""
+}
+
+shara = {
+    0x204A: "",
+    0x20DC: "",
+    0x20FC: "",
+    0x2130: "",
+    0x21C2: "",
+    0x21E2: ""
+}
+
+zorah = {
+    0xC3BD4: "",
+    0xC3C66: "",
+    0xC3C86: "",
+    0xC3CBA: "",
+    0xC3D4C: "",
+    0xC3D6C: ""
+}
+
+xeno = {
+    0xC4516: "",
+    0xC45A8: "",
+    0xC45C8: "",
+    0xC45FC: "",
+    0xC468E: "",
+    0xC46AE: ""
+}
+
+astera_day = {
+    0xC36F2: "",
+    0xC3789: "",
+    0xC37A9: "",
+    0xC38C8: "",
+    0xC395F: "",
+    0xC397F: "",
+    0xC5482: "",
+    0xC5514: "",
+    0xC5534: "",
+    0xC5568: "",
+    0xC55FA: "",
+    0xC561A: ""
+}
+#
+# astera_night = {
+#     0xC414: "",
+#     0xC4A6: "",
+#     0xC4C6: "",
+#     0xC4FA: "",
+#     0xC58C: "",
+#     0xC5AC: ""
+# }
+
+astera_night = {
+    0xC3215: "",
+    0xC32AC: "",
+    0xC32CC: "",
+    0xC3300: "",
+    0xC3397: "",
+    0xC33B7: "",
+    0xC5EF8: "",
+    0xC5F8A: "",
+    0xC5FAA: "",
+    0xC5FDE: "",
+    0xC6070: "",
+    0xC6090: ""
+}
+
+bytes_dictionary = {
+    "mhxx": mhxx_bytes,
+    "mhfu": mhfu_bytes,
+    "mh3u": mh3u_bytes,
+    "mhswing": swing_bytes,
+    "mhswing_loud": swing_bytes,
+    "mhfu_hub": mhfu_hub_bytes,
+    "mh4u_hub": mh4u_hub_bytes,
+    "mhp3_hub": mhp3_hub_bytes,
+    "mhf_kokoto": mhf_kokoto_bytes,
+    "mhp3_yukumo": mhp3_yukumo_bytes,
+    "mh4u_cathar": mh4u_cathar_bytes
+}
+
+hex_dictionary = {
+    "seliana_day": seliana_day,
+    "seliana_night": seliana_night,
+    "astera_day": astera_day,
+    "astera_night": astera_night,
+    "shara": shara,
+    "zorah": zorah,
+    "xeno": xeno,
+    "gathering_hub_seliana": gathering_hub_seliana,
+    "gathering_hub_astera": gathering_hub_astera
+}
