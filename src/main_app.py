@@ -110,6 +110,7 @@ map_bgm_slugger_ingame = {
     "mhfu_hub": partial(move_music_files, mhgame="gathering_hub", filename="mhfu"),
     "mh4u_hub": partial(move_music_files, mhgame="gathering_hub", filename="mh4u"),
     "mhp3_hub": partial(move_music_files, mhgame="gathering_hub", filename="mhp3"),
+    "mhswing_hub": partial(move_music_files, mhgame="gathering_hub", filename="swing"),
     "shara_mhxx": partial(move_music_files, mhgame="alert", filename="mhxx"),
     "shara_mhfu": partial(move_music_files, mhgame="alert", filename="mhfu"),
     "shara_mh3u": partial(move_music_files, mhgame="alert", filename="mh3u"),
@@ -152,20 +153,20 @@ def queue_fileoperations():
         try:
             map_bgm_slugger_ingame[value](theme_wem_values[key])
         except Exception as e:
-            print()
+            print(e)
 
     delete_selection(sound_package_iceborne, "bgm_slugger_ingame.npck")
     for key, value in settings_bgm_ingame.items():
         try:
             map_bgm_slugger_ingame[value](theme_wem_values[key])
         except Exception as e:
-            print()
+            print(e)
     delete_selection(sound_package_zorahxeno, "bgm_ingame.npck")
     for key, value in settings_bgm_ingame_pg.items():
         try:
             map_bgm_slugger_ingame[value](theme_wem_values[key])
         except Exception as e:
-            print()
+            print(e)
     delete_selection(sound_package_vanilla, "bgm_ingame_pg.npck")
 
 
@@ -186,5 +187,5 @@ def run_main():
         try:
             set_loop_points(settings_loop_points[key]())
         except Exception as e:
-            print()
+            print(e)
 

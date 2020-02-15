@@ -7,7 +7,7 @@ def apply_bytes(passed_dict, selection):
             counter = 0
         dictionary[key] = bytelist[counter]
         counter += 1
-    print(f"selected {selection} with dictionary {passed_dict} from bytearray {dictionary}")
+    print(f"selected {selection} with dictionary {passed_dict}")
     return dictionary
 
 
@@ -182,6 +182,7 @@ bytes_dictionary = {
     "mhfu_hub": mhfu_hub_bytes,
     "mh4u_hub": mh4u_hub_bytes,
     "mhp3_hub": mhp3_hub_bytes,
+    "mhswing_hub": swing_bytes,
     "mhf_kokoto": mhf_kokoto_bytes,
     "mhp3_yukumo": mhp3_yukumo_bytes,
     "mh4u_cathar": mh4u_cathar_bytes

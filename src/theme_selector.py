@@ -236,13 +236,11 @@ class MainWindow(QWidget):
     def set_hub_seliana(self, text):
         main_app.settings_loop_points["gathering_hub_seliana"] = partial(hexvals.apply_bytes, passed_dict="gathering_hub_seliana", selection=f"{text_to_values.get(text)}_hub")
         main_app.settings_bgm_slugger_ingame["gathering_hub_seliana"] = f"{text_to_values.get(text)}_hub"
-        print(main_app.settings_bgm_slugger_ingame["gathering_hub_seliana"])
 
 
     def set_hub_astera(self, text):
         main_app.settings_loop_points["gathering_hub_astera"] = partial(hexvals.apply_bytes, passed_dict="gathering_hub_astera", selection=f"{text_to_values.get(text)}_hub")
         main_app.settings_bgm_ingame["gathering_hub_astera"] = f"{text_to_values.get(text)}_hub"
-        print(main_app.settings_bgm_ingame["gathering_hub_astera"])
 
 
 def run_gui():
