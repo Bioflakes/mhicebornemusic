@@ -15,9 +15,12 @@ text_to_values = {
     "Gathering Hub Pokke (MHFU)": "mhfu",
     "Gathering Hub Val Habar (MH4U)": "mh4u",
     "Gathering Hub Yukumo (MHP3)": "mhp3",
+    "Dundorma Town (MH2)": "mh2",
     "Kokoto Village (MHF)": "mhf_kokoto",
     "Yukumo Village (MHP3rd)": "mhp3_yukumo",
-    "Cathar (MH4U)": "mh4u_cathar"
+    "Cathar (MH4U)": "mh4u_cathar",
+    "Jumbo Village (MH2)": "mh2_jumbo",
+    "Bherna Village (MHGen)": "mhxx_bherna"
 }
 
 combobox_pos = 230
@@ -47,6 +50,7 @@ class MainWindow(QWidget):
         sel_day.addItem("Pokke Village (MHFU)")
         sel_day.addItem("Pokke Village (Swing Version)")
         sel_day.addItem("Kokoto Village (MHF)")
+        sel_day.addItem("Jumbo Village (MH2)")
         sel_day.addItem("Moga Village (MH Tri)")
         sel_day.addItem("Yukumo Village (MHP3rd)")
         sel_day.addItem("Cathar (MH4U)")
@@ -64,9 +68,11 @@ class MainWindow(QWidget):
         sel_night.addItem("Pokke Village (MHFU)")
         sel_night.addItem("Pokke Village (Swing Version)")
         sel_night.addItem("Kokoto Village (MHF)")
+        sel_night.addItem("Jumbo Village (MH2)")
         sel_night.addItem("Moga Village (MH Tri)")
         sel_night.addItem("Yukumo Village (MHP3rd)")
         sel_night.addItem("Cathar (MH4U)")
+        sel_night.addItem("Bherna Village (MHGen)")
         sel_night.move(combobox_pos, 50)
         self.lbl_sn.move(50, 50)
 
@@ -80,9 +86,11 @@ class MainWindow(QWidget):
         ast_day.addItem("Pokke Village (MHFU)")
         ast_day.addItem("Pokke Village (Swing Version)")
         ast_day.addItem("Kokoto Village (MHF)")
+        ast_day.addItem("Jumbo Village (MH2)")
         ast_day.addItem("Moga Village (MH Tri)")
         ast_day.addItem("Yukumo Village (MHP3rd)")
         ast_day.addItem("Cathar (MH4U)")
+        ast_day.addItem("Bherna Village (MHGen)")
         ast_day.move(combobox_pos, 80)
         self.lbl_ad.move(50, 80)
 
@@ -96,9 +104,11 @@ class MainWindow(QWidget):
         ast_night.addItem("Pokke Village (MHFU)")
         ast_night.addItem("Pokke Village (Swing Version)")
         ast_night.addItem("Kokoto Village (MHF)")
+        ast_night.addItem("Jumbo Village (MH2)")
         ast_night.addItem("Moga Village (MH Tri)")
         ast_night.addItem("Yukumo Village (MHP3rd)")
         ast_night.addItem("Cathar (MH4U)")
+        ast_night.addItem("Bherna Village (MHGen)")
         ast_night.move(combobox_pos, 110)
         self.lbl_an.move(50, 110)
 
@@ -112,9 +122,11 @@ class MainWindow(QWidget):
         shara.addItem("Pokke Village (MHFU)")
         shara.addItem("Pokke Village (Swing Version)")
         shara.addItem("Kokoto Village (MHF)")
+        shara.addItem("Jumbo Village (MH2)")
         shara.addItem("Moga Village (MH Tri)")
         shara.addItem("Yukumo Village (MHP3rd)")
         shara.addItem("Cathar (MH4U)")
+        shara.addItem("Bherna Village (MHGen)")
         shara.move(combobox_pos, 140)
         self.lbl_sh.move(50, 140)
 
@@ -128,9 +140,11 @@ class MainWindow(QWidget):
         zorah.addItem("Pokke Village (MHFU)")
         zorah.addItem("Pokke Village (Swing Version)")
         zorah.addItem("Kokoto Village (MHF)")
+        zorah.addItem("Jumbo Village (MH2)")
         zorah.addItem("Moga Village (MH Tri)")
         zorah.addItem("Yukumo Village (MHP3rd)")
         zorah.addItem("Cathar (MH4U)")
+        zorah.addItem("Bherna Village (MHGen)")
         zorah.move(combobox_pos, 170)
         self.lbl_zh.move(50, 170)
 
@@ -144,9 +158,11 @@ class MainWindow(QWidget):
         xeno.addItem("Pokke Village (MHFU)")
         xeno.addItem("Pokke Village (Swing Version)")
         xeno.addItem("Kokoto Village (MHF)")
+        xeno.addItem("Jumbo Village (MH2)")
         xeno.addItem("Moga Village (MH Tri)")
         xeno.addItem("Yukumo Village (MHP3rd)")
         xeno.addItem("Cathar (MH4U)")
+        xeno.addItem("Bherna Village (MHGen)")
         xeno.move(combobox_pos, 200)
         self.lbl_xn.move(50, 200)
 
@@ -159,7 +175,14 @@ class MainWindow(QWidget):
         hub_sel.addItem("Gathering Hub Pokke (MHFU)")
         hub_sel.addItem("Gathering Hub Val Habar (MH4U)")
         hub_sel.addItem("Gathering Hub Yukumo (MHP3)")
+        hub_sel.addItem("Dundorma Town (MH2)")
         hub_sel.addItem("Pokke Village (Swing Version)")
+        hub_sel.addItem("Kokoto Village (MHF)")
+        hub_sel.addItem("Jumbo Village (MH2)")
+        hub_sel.addItem("Moga Village (MH Tri)")
+        hub_sel.addItem("Yukumo Village (MHP3rd)")
+        hub_sel.addItem("Cathar (MH4U)")
+        hub_sel.addItem("Bherna Village (MHGen)")
         hub_sel.move(combobox_pos, 250)
         self.lbl_hs.move(50, 250)
 
@@ -172,7 +195,14 @@ class MainWindow(QWidget):
         hub_ast.addItem("Gathering Hub Pokke (MHFU)")
         hub_ast.addItem("Gathering Hub Val Habar (MH4U)")
         hub_ast.addItem("Gathering Hub Yukumo (MHP3)")
+        hub_ast.addItem("Dundorma Town (MH2)")
         hub_ast.addItem("Pokke Village (Swing Version)")
+        hub_ast.addItem("Kokoto Village (MHF)")
+        hub_ast.addItem("Jumbo Village (MH2)")
+        hub_ast.addItem("Moga Village (MH Tri)")
+        hub_ast.addItem("Yukumo Village (MHP3rd)")
+        hub_ast.addItem("Cathar (MH4U)")
+        hub_ast.addItem("Bherna Village (MHGen)")
         hub_ast.move(combobox_pos, 280)
         self.lbl_ha.move(50, 280)
 

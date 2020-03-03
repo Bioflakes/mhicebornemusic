@@ -110,7 +110,14 @@ map_bgm_slugger_ingame = {
     "mhfu_hub": partial(move_music_files, mhgame="gathering_hub", filename="mhfu"),
     "mh4u_hub": partial(move_music_files, mhgame="gathering_hub", filename="mh4u"),
     "mhp3_hub": partial(move_music_files, mhgame="gathering_hub", filename="mhp3"),
+    "mh2_hub": partial(move_music_files, mhgame="gathering_hub", filename="mh2"),
+    "mh3u_hub": partial(move_music_files, mhgame="gathering_hub", filename="mh3u"),
     "mhswing_hub": partial(move_music_files, mhgame="gathering_hub", filename="swing"),
+    "mhf_kokoto_hub": partial(move_music_files, mhgame="gathering_hub", filename="kokoto"),
+    "mhp3_yukumo_hub": partial(move_music_files, mhgame="gathering_hub", filename="yukumo"),
+    "mh4u_cathar_hub": partial(move_music_files, mhgame="gathering_hub", filename="cathar"),
+    "mh2_jumbo_hub": partial(move_music_files, mhgame="gathering_hub", filename="jumbo"),
+    "mhxx_bherna_hub": partial(move_music_files, mhgame="gathering_hub", filename="bherna"),
     "shara_mhxx": partial(move_music_files, mhgame="alert", filename="mhxx"),
     "shara_mhfu": partial(move_music_files, mhgame="alert", filename="mhfu"),
     "shara_mh3u": partial(move_music_files, mhgame="alert", filename="mh3u"),
@@ -118,9 +125,13 @@ map_bgm_slugger_ingame = {
     "shara_mhf_kokoto": partial(move_music_files, mhgame="alert", filename="kokoto"),
     "shara_mhp3_yukumo": partial(move_music_files, mhgame="alert", filename="yukumo"),
     "shara_mh4u_cathar": partial(move_music_files, mhgame="alert", filename="cathar"),
+    "shara_mh2_jumbo": partial(move_music_files, mhgame="alert", filename="jumbo"),
+    "shara_mhxx_bherna": partial(move_music_files, mhgame="alert", filename="bherna"),
     "mhf_kokoto": partial(move_music_files, mhgame="mhf", filename="kokoto"),
     "mhp3_yukumo": partial(move_music_files, mhgame="mhp3", filename="yukumo"),
-    "mh4u_cathar": partial(move_music_files, mhgame="mh4u", filename="cathar")
+    "mh4u_cathar": partial(move_music_files, mhgame="mh4u", filename="cathar"),
+    "mh2_jumbo": partial(move_music_files, mhgame="mh2", filename="jumbo"),
+    "mhxx_bherna": partial(move_music_files, mhgame="mhxx", filename="bherna")
 }
 
 
