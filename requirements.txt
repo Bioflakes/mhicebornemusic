@@ -2,6 +2,6 @@ PyInstaller==3.6
 PyQt5==5.14.1
 PyQt5-sip==12.7.1
 PySimpleGUI==4.15.2
-PyYAML==5.1
+PyYAML==5.4
 six==1.12.0
 tb-nightly==1.14.0a20190301
